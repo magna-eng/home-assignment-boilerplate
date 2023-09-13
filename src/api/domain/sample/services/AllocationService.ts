@@ -1,10 +1,10 @@
 import ExecutionContextManager from '@/db/context/ExecutionContextManager';
 
-class SampleService {
-  getFirstSample() {
+class AllocationService {
+  getFirstAllocation() {
     const ctx = ExecutionContextManager.createExecutionContext();
-    return ctx.prisma.sample.findFirstOrThrow({});
+    return ctx.prisma.allocation.findFirstOrThrow({});
   }
 }
 
-export default new SampleService();
+export default new AllocationService();

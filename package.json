@@ -11,8 +11,10 @@
     "db:generate-prisma": "prisma generate",
     "db:migrate": "prisma migrate dev --create-only",
     "db:up": "prisma migrate deploy",
+    "db:seed": "ts-node scripts/seed.ts",
     "graphql:emit-schema": "ts-node --project tsconfig.json scripts/emit-schema.ts",
-    "graphql:generate-client": "graphql-codegen --config codegen.ts"
+    "graphql:generate-client": "graphql-codegen --config codegen.ts",
+    "graphql:sync": "yarn db:up && yarn db:migrate && yarn graphql:emit-schema && yarn graphql:generate-client"
   },
   "dependencies": {
     "@apollo/client": "^3.7.15",

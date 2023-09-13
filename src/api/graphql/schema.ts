@@ -1,7 +1,8 @@
 import { buildSchema, BuildSchemaOptions } from 'type-graphql';
-import ProjectResolver from '@/api/domain/sample/resolvers/SampleResolver';
+import AllocationResolver from '@/api/domain/sample/resolvers/AllocationResolver';
+import SampleResolver from '@/api/domain/sample/resolvers/SampleResolver';
 
-const resolvers: BuildSchemaOptions['resolvers'] = [ProjectResolver];
+const resolvers: BuildSchemaOptions['resolvers'] = [SampleResolver, AllocationResolver];
 
 // import each resolver manually here
 export type CreateSchemaOptions = {

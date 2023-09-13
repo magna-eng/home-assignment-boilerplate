@@ -1,18 +1,23 @@
 import { gql, useQuery } from '@apollo/client';
 
-const SAMPLE_QUERY = gql(`
-  query sample {
-    sample {
+const ALLOCATION_QUERY = gql(`
+  query allocation {
+    allocation {
       id
-      name
+      amount
     }
   }
 `);
 
 const IndexPage = () => {
-  const { data } = useQuery(SAMPLE_QUERY, {});
+  const { data } = useQuery(ALLOCATION_QUERY, {});
 
-  return <>Magna Home Assignment BoilerPlate: {data?.sample?.id}</>;
+  return (
+    <>
+      <h1>Allocation</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </>
+  );
 };
 
 export default IndexPage;

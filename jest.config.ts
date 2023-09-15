@@ -8,8 +8,6 @@ const createJestConfig = nextJest({
 
 export default createJestConfig({
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
-  snapshotSerializers: ['@emotion/jest/serializer'],
   moduleNameMapper: pathsToModuleNameMapper(tsConfig.compilerOptions.paths, { prefix: '<rootDir>/src' }),
   setupFiles: ['./src/test/setup.ts'],
-  setupFilesAfterEnv: ['./src/test/setup-after-env.ts'],
 });

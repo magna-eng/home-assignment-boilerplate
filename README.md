@@ -4,7 +4,8 @@
 
 1. Install dependencies `yarn`
 2. Run docker container `docker-compose up`
-3. To migrate the database and sync GraphQL schema run `yarn sync`
+3. Run `cp .env.example .env` to create your .env file
+4. To migrate the database and sync GraphQL schema run `yarn sync`
 
 ## Create new Migration with Prisma
 Any prisma file changes will require to run migration to generate SQL migration.

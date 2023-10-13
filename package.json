@@ -12,7 +12,9 @@
     "db:generate-prisma": "prisma generate",
     "db:migrate": "prisma migrate dev --create-only",
     "db:up": "prisma migrate deploy",
+    "db:reset": "yarn prisma migrate reset --force --skip-seed",
     "db:seed": "ts-node scripts/seed.ts",
+    "db:view": "yarn prisma studio",
     "graphql:emit-schema": "ts-node --project tsconfig.json scripts/emit-schema.ts",
     "graphql:generate-client": "graphql-codegen --config codegen.ts",
     "sync": "yarn db:up && yarn db:generate-prisma && yarn graphql:emit-schema && yarn graphql:generate-client"
